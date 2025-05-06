@@ -6,6 +6,8 @@ public class StringReverse {
 		
 		String letter = "Javaselenium";
 		
+		removeDuplicateCharacter(letter);
+		
 		String result = "";
 		
 //		StringBuffer sb = new StringBuffer();
@@ -18,10 +20,33 @@ public class StringReverse {
 			
 		}
 		
-		System.out.println(result);
+		System.out.println("Reverse of the string "+result);
 		
 //		
 
+	}
+	
+	public static void removeDuplicateCharacter(String str) {
+		
+		StringBuilder sb = new StringBuilder(str.length());
+		
+		boolean[] checked = new boolean[256];
+		
+		for(int i = 0; i < str.length(); i++) {
+			
+			char c = str.charAt(i);
+			
+			if(!checked[c]) {
+				
+				sb.append(c);
+				checked[c] = true;
+				
+			}
+			
+		}
+		
+		System.out.println("String after duplicate character removal " + sb.toString());
+		
 	}
 
 }
